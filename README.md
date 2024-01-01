@@ -15,7 +15,7 @@
     <img alt="GitHub release (with filter)" src="https://img.shields.io/github/v/release/xlorey/xLorey-Ads">
 </p>
 
-A plugin whose name speaks for itself - displays your messages when a player connects
+The plugin provides the ability to display advertising messages in the chat after a certain time
 
 # How to use
 
