@@ -1,0 +1,12 @@
+# Time after which the advertising message will be displayed
+# Calculated in minutes
+adsTime: 15
+# Format for displaying advertising messages in chat
+adsMessageFormat: "<RGB:1,0.8,0.1> [Реклама]: <SPACE_SYMBOL> <RGB:1,1,1> <TEXT>"
+# List of advertising messages
+adsMessages:
+  - "Увидели читера? Сообщите администрации!"
+  - "Пожалуйста, соблюдайте правила сервера"
+  - "Узнать подробнее о доступных командах - <RGB:1,0.8,0.1> <SPACE_SYMBOL> /help"
+  - "Присоединяйтесь к нашему сообществу Discord - <RGB:1,0.8,0.1> <SPACE_SYMBOL> https://discord.gg/BwSuTdEGJ4"
+  - "Если у Вас появилась интересная идея по улучшению сервера или заметили баг, сообщите администрации"

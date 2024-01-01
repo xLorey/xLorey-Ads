@@ -1,0 +1,25 @@
+{
+  "name": "xLorey Ads",
+  "description": "The plugin provides the ability to display advertising messages in the chat after a certain time.",
+  "id": "xlorey-ads",
+  "version": "${version}",
+  "authors": [
+    "xLorey Team"
+  ],
+  "contact": [
+    "xlorey@mail.ru"
+  ],
+  "license": "MIT",
+  "icon": "icon.png",
+  "entrypoints": {
+    "client": [],
+    "server": [
+      "io.xlorey.Ads.Main"
+    ]
+  },
+  "controlsEntrypoint": "",
+  "dependencies": {
+    "project-zomboid": "=41.78.16",
+    "flux-loader": "=0.7.0"
+  }
+}
