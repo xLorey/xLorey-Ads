@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>xLorey - Motd</h1>
+    <h1>xLorey - Ads</h1>
 </div>
 
 <p align="center">
@@ -9,10 +9,10 @@
     <a href="https://discord.gg/BwSuTdEGJ4" style="text-decoration: none;">
          <img alt="Discord" src="https://img.shields.io/discord/1174285070761197599.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2">
     </a>
-    <img alt="GitHub License" src="https://img.shields.io/github/license/xLorey/xLorey-Motd">
-    <img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/xlorey/xLorey-Motd">
-    <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/xlorey/xLorey-Motd">
-    <img alt="GitHub release (with filter)" src="https://img.shields.io/github/v/release/xlorey/xLorey-Motd">
+    <img alt="GitHub License" src="https://img.shields.io/github/license/xLorey/xLorey-Ads">
+    <img alt="GitHub issues" src="https://img.shields.io/github/issues-raw/xlorey/xLorey-Ads">
+    <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/xlorey/xLorey-Ads">
+    <img alt="GitHub release (with filter)" src="https://img.shields.io/github/v/release/xlorey/xLorey-Ads">
 </p>
 
 A plugin whose name speaks for itself - displays your messages when a player connects
