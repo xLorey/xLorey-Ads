@@ -1,11 +1,12 @@
-package io.xlorey.Ads;
+package io.xlorey.ads;
 
-import io.xlorey.FluxLoader.annotations.SubscribeEvent;
-import io.xlorey.FluxLoader.plugin.Plugin;
-import io.xlorey.FluxLoader.server.api.ServerUtils;
+import io.xlorey.ads.handlers.OnServerInitHandler;
+import io.xlorey.fluxloader.plugin.Configuration;
+import io.xlorey.fluxloader.plugin.Plugin;
+import io.xlorey.fluxloader.server.api.ServerUtils;
+import io.xlorey.fluxloader.shared.EventManager;
 
 import java.util.List;
-import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
@@ -13,24 +14,28 @@ import java.util.concurrent.TimeUnit;
  * Plugin entry point
  */
 public class Main extends Plugin {
-    private static ScheduledExecutorService scheduler;
-    private int currentAdIndex = 0;
+    private static Main instance;
+    public static ScheduledExecutorService scheduler;
+    public static int currentAdIndex = 0;
 
     /**
      * Initializes the plugin and sets up the default configuration.
      */
     @Override
     public void onInitialize() {
+        instance = this;
+
+        EventManager.subscribe(new OnServerInitHandler());
+
         saveDefaultConfig();
     }
 
     /**
-     * Handling the server initialization event
+     * Getting the standard config
+     * @return standard config
      */
-    @SubscribeEvent(eventName="onServerInitialize")
-    public void onServerInitializeHandler(){
-        scheduler = Executors.newSingleThreadScheduledExecutor();
-        scheduler.scheduleAtFixedRate(this::showAds, 0, getConfig().getInt("adsTime"), TimeUnit.MINUTES);
+    public static Configuration getDefaultConfig() {
+        return instance.getConfig();
     }
 
     /**
@@ -55,15 +60,15 @@ public class Main extends Plugin {
      * Displays an advertising message in the general chat.
      * Selects a random message from the list of advertisements and sends it to the server chat.
      */
-    public void showAds() {
-        List<Object> adsList = getConfig().getList("adsMessages");
+    public static void showAds() {
+        List<Object> adsList = getDefaultConfig().getList("adsMessages");
         if (adsList == null || adsList.isEmpty()) {
             return;
         }
 
         String adText = (String) adsList.get(currentAdIndex);
 
-        String formattedText = getConfig().getString("adsMessageFormat")
+        String formattedText = getDefaultConfig().getString("adsMessageFormat")
                 .replace("<TEXT>", adText)
                 .replace("<SPACE_SYMBOL>", "\u200B");
 
